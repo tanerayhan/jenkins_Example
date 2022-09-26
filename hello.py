@@ -11,7 +11,8 @@ class RichTableCreator:
         self.product = product
         self.console = RichConsole(force_terminal=True, width=200, height=400)
         self.table = RichTable(
-            title=self.product.upper(), show_lines=False, expand=True
+            title=self.product.upper(),
+            show_lines=True,
         )
         self.table.add_column("Chain", style="cyan")
         self.table.add_column("AB", style="magenta")
@@ -53,25 +54,25 @@ class RichTableCreator:
 
 rich_table = RichTableCreator(product="Taner")
 mylist = [
-    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
+    "AASSADFASDGKA",
     2,
     3,
     4,
     5,
     6,
-    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
+    "AASSADFASDGKA",
     8,
     9,
     10,
     11,
     12,
-    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
+    "AASSADFASDGKAS",
     14,
     15,
     16,
     17,
     18,
-    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
+    "AASSADFASDGKASK",
     20,
     21,
     22,
