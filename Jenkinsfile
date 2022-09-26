@@ -8,7 +8,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        sh 'python3 hello.py'
+        sh '  pip install numpy && python3 hello.py'
       }
     }
   }
