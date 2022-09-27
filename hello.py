@@ -19,7 +19,7 @@ class RichTableCreator:
         self.console = RichConsole()
         self.table.add_column("Index", style="cyan", width=40)
         self.table.add_column("Step", style="magenta", width=40)
-        self.table.add_column("Envelope | Tested", style="magenta", width=40)
+        self.table.add_column("Envelope | Tested", style="magenta", width=120)
         self.table.add_column("Config | Expected", style="magenta", width=40)
         self.table.add_column("AirSniff", style="magenta", width=120)
         self.table.add_column("Result", style="green", width=40)
