@@ -114,3 +114,5 @@ data = [
     ["AASSADFASDGKASKDG", 20, 21, 22, 23, 24],
 ]
 print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
+rich_console = RichConsole()
+print(rich_console.size)
