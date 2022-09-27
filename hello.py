@@ -5,6 +5,19 @@ from rich import print as rich_print
 import numpy as np
 from tabulate import tabulate
 
+rich_console = RichConsole()
+print(rich_console.size)
+console_opt = ConsoleOptions(
+    size=rich_console.size,
+    legacy_windows=True,
+    min_width=150,
+    max_width=400,
+    is_terminal=True,
+    encoding="UTF-8",
+    max_height=400,
+)
+console_opt.update_width(200)
+
 
 class RichTableCreator:
     """RichTable Class"""
@@ -15,7 +28,6 @@ class RichTableCreator:
         self.table = RichTable(
             title="Verification",
             show_lines=True,
-            expand=True,
         )
 
         self.table.add_column("Index")
@@ -114,17 +126,5 @@ data = [
     ],
     ["AASSADFASDGKASKDG", 20, 21, 22, 23, 24],
 ]
+print(rich_console.size)
 print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
-rich_console = RichConsole()
-print(rich_console.size)
-console_opt = ConsoleOptions(
-    size=rich_console.size,
-    legacy_windows=True,
-    min_width=40,
-    max_width=400,
-    is_terminal=True,
-    encoding="UTF-8",
-    max_height=800,
-)
-console_opt.update_width(182)
-print(rich_console.size)
