@@ -22,7 +22,7 @@ class RichTableCreator:
         self.table.add_column("Envelope | Tested", style="magenta", width=40)
         self.table.add_column("Config | Expected", style="magenta", width=40)
         self.table.add_column("AirSniff", style="magenta", width=40)
-        self.table.add_column("Result", style="green", min_width=70)
+        self.table.add_column("Result", style="green", min_width=40)
 
     def update(self, _list):
         """table update"""
