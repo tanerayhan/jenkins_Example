@@ -16,14 +16,13 @@ class RichTableCreator:
             show_lines=True,
             expand=True,
         )
-        self.console = RichConsole()
+
         self.table.add_column("Index", style="cyan", width=40)
         self.table.add_column("Step", style="magenta", width=40)
-        self.table.add_column("Envelope | Tested", style="magenta", width=120)
+        self.table.add_column("Envelope | Tested", style="magenta", width=40)
         self.table.add_column("Config | Expected", style="magenta", width=40)
-        self.table.add_column("AirSniff", style="magenta", width=120)
+        self.table.add_column("AirSniff", style="magenta", width=40)
         self.table.add_column("Result", style="green", width=40)
-
 
     def update(self, _list):
         """table update"""
@@ -47,7 +46,6 @@ class RichTableCreator:
                 temp_list = _list[_i_, :]
                 self.update(temp_list)
 
-            self.console.print(self.table)
             rich_print(self.table)
 
         except Exception as err:
@@ -77,11 +75,6 @@ mylist = [
     18,
     "AASSADFASDGKASKDGKAAA",
     20,
-    21,
-    22,
-    23,
-    24,
-    25,
 ]
 rich_table.print(mylist)
 col_names = [
