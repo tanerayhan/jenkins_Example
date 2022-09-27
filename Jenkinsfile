@@ -8,7 +8,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        sh ' python -m rich.table && pip install tabulate && pip install rich && python3 hello.py'
+        sh ' python3 -m rich.table && pip install tabulate && pip install rich && python3 hello.py'
       }
     }
   }
