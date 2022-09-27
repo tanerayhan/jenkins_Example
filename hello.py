@@ -17,12 +17,12 @@ class RichTableCreator:
             expand=True,
         )
 
-        self.table.add_column("Index", style="cyan", overflow="crop")
-        self.table.add_column("Step", style="magenta", overflow="crop")
-        self.table.add_column("Envelope | Tested", style="magenta", overflow="crop")
-        self.table.add_column("Config | Expected", style="magenta", overflow="crop")
-        self.table.add_column("AirSniff", style="magenta", overflow="crop")
-        self.table.add_column("Result", style="green", overflow="crop")
+        self.table.add_column("Index")
+        self.table.add_column("Step")
+        self.table.add_column("Envelope | Tested")
+        self.table.add_column("Config | Expected")
+        self.table.add_column("AirSniff")
+        self.table.add_column("Result")
 
     def update(self, _list):
         """table update"""
@@ -47,7 +47,6 @@ class RichTableCreator:
                 self.update(temp_list)
 
             rich_print(self.table)
-
         except Exception as err:
             return False
         return True
