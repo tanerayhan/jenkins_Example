@@ -11,7 +11,11 @@ class RichTableCreator:
     def __init__(self):
         self.index = 0
         self.verification_data = []
-        self.table = RichTable( show_lines=True, safe_box=False,expand=True)
+        self.table = RichTable(
+            title="Verification",
+            show_lines=True,
+            expand=True,
+        )
         self.console = RichConsole()
         self.table.add_column("Index", style="cyan")
         self.table.add_column("Step", style="magenta")
@@ -72,6 +76,11 @@ mylist = [
     18,
     "AASSADFASDGKASKDGKAAA",
     20,
+    21,
+    22,
+    23,
+    24,
+    25,
 ]
 rich_table.print(mylist)
 col_names = [
