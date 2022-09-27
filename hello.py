@@ -1,5 +1,6 @@
 from rich.table import Table as RichTable
 from rich.console import Console as RichConsole
+from rich.console import ConsoleOptions
 from rich import print as rich_print
 import numpy as np
 from tabulate import tabulate
@@ -115,4 +116,15 @@ data = [
 ]
 print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
 rich_console = RichConsole()
+print(rich_console.size)
+console_opt = ConsoleOptions(
+    size=rich_console.size,
+    legacy_windows=True,
+    min_width=40,
+    max_width=400,
+    is_terminal=True,
+    encoding="UTF-8",
+    max_height=800,
+)
+console_opt.update_width(182)
 print(rich_console.size)
