@@ -5,18 +5,6 @@ from rich import print as rich_print
 import numpy as np
 from tabulate import tabulate
 
-rich_console = RichConsole()
-print(rich_console.size)
-console_opt = ConsoleOptions(
-    size=rich_console.size,
-    legacy_windows=True,
-    min_width=150,
-    max_width=400,
-    is_terminal=True,
-    encoding="UTF-8",
-    max_height=400,
-)
-console_opt.update_width(200)
 
 
 class RichTableCreator:
@@ -28,8 +16,8 @@ class RichTableCreator:
         self.table = RichTable(
             title="Verification",
             show_lines=True,
-        )
-
+        )   
+        self.console=RichConsole(width=250)
         self.table.add_column("Index")
         self.table.add_column("Step")
         self.table.add_column("Envelope | Tested")
@@ -60,6 +48,7 @@ class RichTableCreator:
                 self.update(temp_list)
 
             rich_print(self.table)
+            self.console.print(self.table)
         except Exception as err:
             return False
         return True
@@ -89,42 +78,3 @@ mylist = [
     20,
 ]
 rich_table.print(mylist)
-col_names = [
-    "Index",
-    "Step",
-    "Envelope | Tested",
-    "Config| Expected",
-    "AirSniff",
-    "Result",
-]
-
-# display table
-data = [
-    [
-        1,
-        "SomeDetailed Text",
-        3,
-        4,
-        5,
-        "AirtiesWireleKSKSKK",
-    ],
-    [
-        2,
-        8,
-        9,
-        10,
-        11,
-        12,
-    ],
-    [
-        3,
-        14,
-        15,
-        16,
-        17,
-        "AGGAAGGAAGAGAGG",
-    ],
-    ["AASSADFASDGKASKDG", 20, 21, 22, 23, 24],
-]
-print(rich_console.size)
-print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
