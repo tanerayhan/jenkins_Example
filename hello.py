@@ -2,6 +2,7 @@ from rich.table import Table as RichTable
 from rich.console import Console as RichConsole
 from rich import print as rich_print
 import numpy as np
+from tabulate import tabulate
 
 
 class RichTableCreator:
@@ -11,7 +12,7 @@ class RichTableCreator:
         self.index = 0
         self.verification_data = []
         self.table = RichTable(title="Verification", show_lines=True)
-        self.console = RichConsole(force_terminal=True)
+        self.console = RichConsole()
         self.table.add_column("Index", style="cyan")
         self.table.add_column("Step", style="magenta")
         self.table.add_column("Envelope | Tested", style="magenta")
@@ -51,25 +52,63 @@ class RichTableCreator:
 
 rich_table = RichTableCreator()
 mylist = [
-    "AASSADFASDGKAS GKAKSDGKSKDGA",
+    "AASSADFASDGKAS GKAKSDG",
     2,
     3,
     4,
     5,
-    "AirtiesWirelessNetworkCompanyUrlaIzmirTurkey",
-    "AASSADFASDGKASKDGKA GKSKDGA",
+    "AirtiesWirelessNetwork",
+    "AASSADFASGKA GKSKDGA",
     8,
     9,
     10,
     11,
     12,
-    "AASSADFASDGKAS GKAKSDGKSKDGA",
+    "AASSADFASDGKAS GKADGA",
     14,
     15,
     16,
     17,
     18,
-    "AASSADFASDGKASKDGKASGKA SKDGA",
+    "AASSADFASDGKASKDGKAAA",
     20,
 ]
 rich_table.print(mylist)
+col_names = [
+    "Index",
+    "Step",
+    "Envelope | Tested",
+    "Config| Expected",
+    "AirSniff",
+    "Result",
+]
+
+# display table
+data = [
+    [
+        1,
+        "SomeDetailed Text",
+        3,
+        4,
+        5,
+        "AirtiesWireleKSKSKKSKSKSKssNet",
+    ],
+    [
+        2,
+        8,
+        9,
+        10,
+        11,
+        12,
+    ],
+    [
+        3,
+        14,
+        15,
+        16,
+        17,
+        "AGGAAGGAAGAGAGG",
+    ],
+    ["AASSADFASDGKASKDGSFDGSDGDKAS", 20, 21, 22, 23, 24],
+]
+print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
