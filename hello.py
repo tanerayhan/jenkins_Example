@@ -1,5 +1,6 @@
 from rich.table import Table as RichTable
 from rich.console import Console as RichConsole
+from rich import print as rich_print
 import numpy as np
 
 
@@ -9,7 +10,7 @@ class RichTableCreator:
     def __init__(self):
         self.index = 0
         self.verification_data = []
-        self.table = RichTable(title="Verification", show_lines=True,expand=True)
+        self.table = RichTable(title="Verification", show_lines=True)
         self.console = RichConsole()
         self.table.add_column("Index", style="cyan")
         self.table.add_column("Step", style="magenta")
@@ -41,6 +42,8 @@ class RichTableCreator:
                 self.update(temp_list)
 
             self.console.print(self.table)
+            rich_print(self.table)
+
         except Exception as err:
             return False
         return True
@@ -53,8 +56,8 @@ mylist = [
     3,
     4,
     5,
-    6,
     "AirtiesWirelessNetworkCompanyUrlaIzmirTurkey",
+    "AASSADFASDGKASKDGKA GKSKDGA",
     8,
     9,
     10,
