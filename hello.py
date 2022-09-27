@@ -48,25 +48,25 @@ class RichTableCreator:
 
 rich_table = RichTableCreator()
 mylist = [
-    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
+    "AASSADFASDGKAS GKAKSDGKSKDGA",
     2,
     3,
     4,
     5,
     6,
-    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
+    "AASSADFASDGKASKDGKA GKSKDGA",
     8,
     9,
     10,
     11,
     12,
-    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
+    "AASSADFASDGKAS GKAKSDGKSKDGA",
     14,
     15,
     16,
     17,
     18,
-    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
+    "AASSADFASDGKASKDGKASGKA SKDGA",
     20,
 ]
 rich_table.print(mylist)
