@@ -11,7 +11,7 @@ class RichTableCreator:
     def __init__(self):
         self.index = 0
         self.verification_data = []
-        self.table = RichTable(title="Verification", show_lines=True)
+        self.table = RichTable(title="Verification", show_lines=True, safe_box=False)
         self.console = RichConsole()
         self.table.add_column("Index", style="cyan")
         self.table.add_column("Step", style="magenta")
@@ -91,7 +91,7 @@ data = [
         3,
         4,
         5,
-        "AirtiesWireleKSKSKKSKSKSKssNet",
+        "AirtiesWireleKSKSKK",
     ],
     [
         2,
@@ -109,6 +109,6 @@ data = [
         17,
         "AGGAAGGAAGAGAGG",
     ],
-    ["AASSADFASDGKASKDGSFDGSDGDKAS", 20, 21, 22, 23, 24],
+    ["AASSADFASDGKASKDG", 20, 21, 22, 23, 24],
 ]
 print(tabulate(data, headers=col_names, tablefmt="fancy_grid"))
