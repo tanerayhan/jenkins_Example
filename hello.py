@@ -17,12 +17,13 @@ class RichTableCreator:
             expand=True,
         )
         self.console = RichConsole()
-        self.table.add_column("Index", style="cyan")
-        self.table.add_column("Step", style="magenta")
-        self.table.add_column("Envelope | Tested", style="magenta")
-        self.table.add_column("Config | Expected", style="magenta")
-        self.table.add_column("AirSniff", style="magenta")
-        self.table.add_column("Result", style="green")
+        self.table.add_column("Index", style="cyan", width=40)
+        self.table.add_column("Step", style="magenta", width=40)
+        self.table.add_column("Envelope | Tested", style="magenta", width=40)
+        self.table.add_column("Config | Expected", style="magenta", width=40)
+        self.table.add_column("AirSniff", style="magenta", width=40)
+        self.table.add_column("Result", style="green", width=40)
+
 
     def update(self, _list):
         """table update"""
