@@ -6,7 +6,6 @@ import numpy as np
 from tabulate import tabulate
 
 
-
 class RichTableCreator:
     """RichTable Class"""
 
@@ -16,8 +15,8 @@ class RichTableCreator:
         self.table = RichTable(
             title="Verification",
             show_lines=True,
-        )   
-        self.console=RichConsole(width=250)
+        )
+        self.console = RichConsole(width=250)
         self.table.add_column("Index")
         self.table.add_column("Step")
         self.table.add_column("Envelope | Tested")
@@ -46,9 +45,9 @@ class RichTableCreator:
             for _i_ in range(num_of_chain):
                 temp_list = _list[_i_, :]
                 self.update(temp_list)
-
-            rich_print(self.table)
             self.console.print(self.table)
+            rich_print(self.table)
+
         except Exception as err:
             return False
         return True
