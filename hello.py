@@ -1,5 +1,5 @@
 from rich.table import Table as RichTable
-from rich.console import Console as RichConsole
+from rich import print as rich_print
 import numpy as np
 
 
@@ -9,10 +9,9 @@ class RichTableCreator:
     def __init__(self, product):
         self.index = 0
         self.product = product
-        self.console = RichConsole(force_terminal=True, width=200, height=400)
+
         self.table = RichTable(
-            title=self.product.upper(),
-            show_lines=True,
+            title=self.product.upper(), show_lines=False, expand=True
         )
         self.table.add_column("Chain", style="cyan")
         self.table.add_column("AB", style="magenta")
@@ -44,9 +43,8 @@ class RichTableCreator:
             for _i_ in range(num_of_chain):
                 temp_list = _list[_i_, :]
                 self.update(temp_list)
-            self.console.print(self.table, justify="fulll")
-            self.console.print("\n")
 
+            rich_print(self.table)
         except Exception as err:
             return False
         return True
@@ -54,25 +52,25 @@ class RichTableCreator:
 
 rich_table = RichTableCreator(product="Taner")
 mylist = [
-    1,
+    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
     2,
     3,
     4,
     5,
     6,
-    7,
+    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
     8,
     9,
     10,
     11,
     12,
-    13,
+    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
     14,
     15,
     16,
     17,
     18,
-    19,
+    "AASSADFASDGKASKDGKASGKAKSDGKSKDGA",
     20,
     21,
     22,
