@@ -9,7 +9,7 @@ class RichTableCreator:
     def __init__(self):
         self.index = 0
         self.verification_data = []
-        self.table = RichTable(title="Verification", show_lines=True)
+        self.table = RichTable(title="Verification", show_lines=True,expand=True)
         self.console = RichConsole()
         self.table.add_column("Index", style="cyan")
         self.table.add_column("Step", style="magenta")
@@ -54,7 +54,7 @@ mylist = [
     4,
     5,
     6,
-    "AASSADFASDGKASKDGKA GKSKDGA",
+    "AirtiesWirelessNetworkCompanyUrlaIzmirTurkey",
     8,
     9,
     10,
