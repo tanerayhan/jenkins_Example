@@ -10,7 +10,7 @@ class RichTableCreator:
     def __init__(self):
         self.index = 0
         self.verification_data = []
-        self.table = RichTable(title="Verification", show_lines=True, width=400)
+        self.table = RichTable(title="Verification", show_lines=True)
         self.console = RichConsole()
         self.table.add_column("Index", style="cyan")
         self.table.add_column("Step", style="magenta")
