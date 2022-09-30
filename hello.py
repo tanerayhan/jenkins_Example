@@ -1,10 +1,10 @@
 from rich.table import Table as RichTable
 from rich.console import Console as RichConsole
-from rich.console import ConsoleOptions
-from rich import print as rich_print
-from rich import get_console
 import numpy as np
-from tabulate import tabulate
+from rich.pretty import pprint
+import shutil
+
+print(shutil.get_terminal_size())
 
 
 class RichTableCreator:
@@ -13,11 +13,7 @@ class RichTableCreator:
     def __init__(self):
         self.index = 0
         self.verification_data = []
-        self.table = RichTable(
-            title="Verification",
-            show_lines=True,
-        )
-        self.console = RichConsole(width=80)
+        self.table = RichTable(title="Verification", show_lines=True)
         self.table.add_column("Index")
         self.table.add_column("Step")
         self.table.add_column("Envelope | Tested")
@@ -46,7 +42,9 @@ class RichTableCreator:
             for _i_ in range(num_of_chain):
                 temp_list = _list[_i_, :]
                 self.update(temp_list)
-            self.console.print(self.table)
+            RichConsole(width=80).print(self.table)
+
+            # pprint(self.table)
 
         except Exception as err:
             return False
@@ -77,6 +75,3 @@ mylist = [
     20,
 ]
 rich_table.print(mylist)
-print(
-    "tanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhan"
-)
