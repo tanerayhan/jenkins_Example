@@ -47,7 +47,6 @@ class RichTableCreator:
                 temp_list = _list[_i_, :]
                 self.update(temp_list)
             self.console.print(self.table)
-            rich_print(self.table)
 
         except Exception as err:
             return False
