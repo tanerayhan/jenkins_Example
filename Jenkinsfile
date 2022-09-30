@@ -8,7 +8,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        sh 'pip install rich && python3 hello.py'
+        sh 'whoami && pip install rich && python3 hello.py'
       }
     }
   }
