@@ -2,6 +2,7 @@ from rich.table import Table as RichTable
 from rich.console import Console as RichConsole
 from rich.console import ConsoleOptions
 from rich import print as rich_print
+from rich import get_console
 import numpy as np
 from tabulate import tabulate
 
@@ -16,7 +17,7 @@ class RichTableCreator:
             title="Verification",
             show_lines=True,
         )
-        self.console = RichConsole(width=250)
+        self.console = RichConsole(width=80)
         self.table.add_column("Index")
         self.table.add_column("Step")
         self.table.add_column("Envelope | Tested")
@@ -77,3 +78,6 @@ mylist = [
     20,
 ]
 rich_table.print(mylist)
+print(
+    "tanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhantanerayhan"
+)
