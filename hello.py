@@ -76,4 +76,4 @@ mylist = [
 ]
 rich_table.print(mylist)
 
-
+print(shutil.get_terminal_size())
