@@ -42,6 +42,23 @@ class RichTableCreator:
             for _i_ in range(num_of_chain):
                 temp_list = _list[_i_, :]
                 self.update(temp_list)
+            RichConsole().print(self.table)
+
+            # pprint(self.table)
+
+        except Exception as err:
+            return False
+        return True
+
+    def printer(self, _list):
+        """show the table"""
+        try:
+            num_of_path = 5
+            num_of_chain = int(len(_list) / num_of_path)
+            _list = np.reshape(_list, (num_of_chain, num_of_path))
+            for _i_ in range(num_of_chain):
+                temp_list = _list[_i_, :]
+                self.update(temp_list)
             RichConsole(width=200).print(self.table)
 
             # pprint(self.table)
@@ -75,5 +92,5 @@ mylist = [
     20,
 ]
 rich_table.print(mylist)
-
+rich_table.printer(mylist)
 print(shutil.get_terminal_size())
