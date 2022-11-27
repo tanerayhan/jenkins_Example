@@ -1,5 +1,6 @@
 from rich.table import Table as RichTable
 from rich.console import Console as RichConsole
+from rich import print as rich_print
 import numpy as np
 from rich.pretty import pprint
 import shutil
@@ -42,8 +43,8 @@ class RichTableCreator:
             for _i_ in range(num_of_chain):
                 temp_list = _list[_i_, :]
                 self.update(temp_list)
-            RichConsole().print(self.table)
-
+            # RichConsole().print(self.table)
+            rich_print(self.table)
             # pprint(self.table)
 
         except Exception as err:
@@ -59,7 +60,7 @@ class RichTableCreator:
             for _i_ in range(num_of_chain):
                 temp_list = _list[_i_, :]
                 self.update(temp_list)
-            RichConsole(width=200).print(self.table)
+            RichConsole(width=200, force_interactive=True).print(self.table)
 
             # pprint(self.table)
 
