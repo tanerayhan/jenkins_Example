@@ -11,5 +11,10 @@ pipeline {
         sh ' pip install rich && python3 hello.py'
       }
     }
+      stage('hello') {
+      steps {
+        sh ' pip install rich && python3 hello.py'
+      }
+    }
   }
 }
